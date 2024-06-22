@@ -1,0 +1,24 @@
+const indexRouter = require("../routes/index");
+const usersRouter = require("../routes/users");
+const productsRouter = require("../routes/products");
+const contentsRouter = require("../routes/content");
+const categoryRouter = require("../routes/category");
+const collectionsRouter = require("../routes/collection");
+const store_category_routes = require("../routes/store/store_catgeory");
+const storeProductsRouter = require("../routes/store/store_product");
+const storeCollectionRouter = require("../routes/store/store_collection");
+const storeContentRouter = require("../routes/store/store_content");
+const storeMainRouter = require("../routes/store/store_index");
+module.exports = (app) => {
+  app.use("/", indexRouter);
+  app.use("/users", usersRouter);
+  app.use("/products", productsRouter);
+  app.use("/content", contentsRouter);
+  app.use("/collection", collectionsRouter);
+  app.use("/category", categoryRouter);
+  app.use("/store", storeMainRouter);
+  app.use("/store/category", store_category_routes);
+  app.use("/store/product", storeProductsRouter);
+  app.use("/store/collection", storeCollectionRouter);
+  app.use("/store/content", storeContentRouter);
+};
