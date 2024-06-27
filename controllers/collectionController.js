@@ -113,8 +113,9 @@ exports.getCollectionsBySlug = async (req, res) => {
 };
 
 exports.updateCollections = async (req, res) => {
+  const { slug } = req.params;
   try {
-    const collection = await Collections.findById(req.params.id);
+    const collection = await Collections.findOne({ slug });
     if (!collection) {
       return handleApiResponse.handleApiError(
         res,

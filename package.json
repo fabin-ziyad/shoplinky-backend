@@ -3,11 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./bin/www",
-    "start": "node ./bin/www"
-  },
-  "engines": {
-    "node": ">=18"
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.582.0",
